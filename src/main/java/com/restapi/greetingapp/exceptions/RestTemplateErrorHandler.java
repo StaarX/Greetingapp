@@ -1,4 +1,4 @@
-package com.restapi.greetingapp;
+package com.restapi.greetingapp.exceptions;
 
 import com.restapi.greetingapp.exceptions.InternalException;
 import com.restapi.greetingapp.exceptions.InvalidFieldException;
@@ -20,7 +20,6 @@ public class RestTemplateErrorHandler implements ResponseErrorHandler {
     @Override
     public void handleError(ClientHttpResponse httpResponse)
             throws IOException {
-
         if (httpResponse.getStatusCode()
                 .series() == HttpStatus.Series.SERVER_ERROR) {
             // handle SERVER_ERROR
